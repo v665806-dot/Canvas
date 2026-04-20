@@ -73,17 +73,16 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
     }
 
     .brand-logo {
       display: block;
-      width: 190px;
+      width: 230px;
       height: auto;
     }
 
     .brand-logo.small {
-      width: 170px;
+      width: 210px;
     }
 
     .brand-logo svg {
@@ -113,40 +112,55 @@
 
     .hero {
       position: relative;
-      padding: 88px 0 48px;
+      padding: 52px 0 48px;
+    }
+
+    .hero-top {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      padding: 10px 16px;
+      border: 1px solid rgba(61, 217, 197, 0.25);
+      background: rgba(61, 217, 197, 0.08);
+      color: #c8fff7;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+
+    .eyebrow .brand-logo {
+      width: 155px;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-size: clamp(1.8rem, 3.2vw, 3.3rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 24px;
     }
 
-    .hero-brand {
-      display: inline-flex;
-      align-items: center;
-      padding: 12px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255,255,255,0.05);
-      border-radius: 20px;
-      margin-bottom: 18px;
-      box-shadow: var(--shadow);
+    .hero-intro {
+      max-width: 760px;
     }
 
-    .hero-brand .brand-logo {
-      width: 230px;
-    }
-
-    h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2rem, 5vw, 4.2rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      max-width: 12ch;
-    }
-
-    .hero p {
+    .hero-intro p {
       color: var(--muted);
       font-size: 1.06rem;
       max-width: 62ch;
@@ -201,6 +215,7 @@
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
+      max-width: 100%;
     }
 
     .hero-card::before {
@@ -215,7 +230,7 @@
 
     .metric {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
       margin-top: 18px;
     }
@@ -228,7 +243,7 @@
     }
 
     .metric-value {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 800;
       margin-bottom: 4px;
       color: #dffff9;
@@ -387,8 +402,19 @@
       50% { transform: translateY(-10px); }
     }
 
+    @media (max-width: 1100px) {
+      .hero-title {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+      }
+
+      .metric {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 980px) {
-      .hero-grid,
       .grid-3,
       .grid-2,
       .decision-grid {
@@ -396,11 +422,7 @@
       }
 
       .hero {
-        padding-top: 64px;
-      }
-
-      h1 {
-        max-width: none;
+        padding-top: 40px;
       }
     }
 
@@ -440,11 +462,15 @@
       }
 
       .brand-logo.small {
-        width: 150px;
+        width: 180px;
       }
 
-      .hero-brand .brand-logo {
-        width: 180px;
+      .eyebrow .brand-logo {
+        width: 130px;
+      }
+
+      .hero-title {
+        font-size: 1.9rem;
       }
     }
   </style>
@@ -454,14 +480,12 @@
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="Optimacros">
         <span class="brand-logo small">
-          <svg viewBox="0 0 520 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-            <g transform="translate(0,0)">
-              <polygon points="120,28 155,14 192,26 157,42" fill="var(--logo-pink)"/>
-              <polygon points="240,5 280,16 280,122 240,110" fill="var(--logo-purple)"/>
-              <path d="M110 48 L150 58 L150 126 L242 156 L242 170 L110 132 Z" fill="var(--logo-dark)"/>
-            </g>
-            <text x="8" y="165" font-size="74" font-weight="800" fill="#ffffff"
-              font-family="Inter, Arial, sans-serif">Optimacros</text>
+          <svg viewBox="0 0 1024 388" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <rect width="1024" height="388" fill="none"/>
+            <polygon points="79,91 111,79 140,88 111,105" fill="var(--logo-pink)"/>
+            <polygon points="151,68 184,76 184,223 151,213" fill="var(--logo-purple)"/>
+            <path d="M72 108 L106 114 L106 226 L184 251 L184 287 L72 250 Z" fill="#ffffff"/>
+            <text x="302" y="226" font-size="120" font-weight="800" fill="#ffffff" font-family="Inter, Arial, sans-serif">Optimacros</text>
           </svg>
         </span>
       </a>
@@ -477,59 +501,62 @@
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="reveal visible">
-          <div class="hero-brand">
+      <div class="container">
+        <div class="hero-top reveal visible">
+          <div class="eyebrow">
             <span class="brand-logo">
-              <svg viewBox="0 0 520 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Optimacros">
-                <g transform="translate(0,0)">
-                  <polygon points="120,28 155,14 192,26 157,42" fill="var(--logo-pink)"/>
-                  <polygon points="240,5 280,16 280,122 240,110" fill="var(--logo-purple)"/>
-                  <path d="M110 48 L150 58 L150 126 L242 156 L242 170 L110 132 Z" fill="#ffffff"/>
-                </g>
-                <text x="8" y="165" font-size="74" font-weight="800" fill="#ffffff"
-                  font-family="Inter, Arial, sans-serif">Optimacros</text>
+              <svg viewBox="0 0 1024 388" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Optimacros">
+                <rect width="1024" height="388" fill="none"/>
+                <polygon points="79,91 111,79 140,88 111,105" fill="var(--logo-pink)"/>
+                <polygon points="151,68 184,76 184,223 151,213" fill="var(--logo-purple)"/>
+                <path d="M72 108 L106 114 L106 226 L184 251 L184 287 L72 250 Z" fill="#ffffff"/>
+                <text x="302" y="226" font-size="120" font-weight="800" fill="#ffffff" font-family="Inter, Arial, sans-serif">Optimacros</text>
               </svg>
             </span>
           </div>
 
-          <h1>Как повысить эффективность: CPM, когда Эксель не вывозит?</h1>
-
-          <p>
-            Когда бюджетирование, прогнозирование и управленческая отчётность начинают
-            упираться в ручной труд, разрозненные файлы и ошибки в формулах — бизнесу нужен
-            новый уровень зрелости. CPM помогает перевести управление эффективностью из Excel в
-            единую управляемую систему.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#about">Изучить CPM</a>
-            <a class="btn btn-secondary" href="#decision-makers">Что важно при выборе</a>
-          </div>
+          <h1 class="hero-title">Как повысить эффективность: CPM, когда Эксель не вывозит?</h1>
         </div>
 
-        <div class="hero-card reveal float">
-          <h3 style="margin-top:0;">Почему компании переходят к CPM</h3>
-          <p style="color: var(--muted); margin-bottom: 0;">
-            CPM-платформа объединяет планирование, консолидацию, сценарный анализ и контроль KPI,
-            чтобы руководство принимало решения быстрее и точнее.
-          </p>
-          <div class="metric">
-            <div class="metric-item">
-              <div class="metric-value">1 версия</div>
-              <div class="metric-label">единого источника данных для управленческих решений</div>
+        <div class="hero-grid">
+          <div class="hero-card reveal float">
+            <h3 style="margin-top:0;">Почему компании переходят к CPM</h3>
+            <p style="color: var(--muted); margin-bottom: 0;">
+              CPM-платформа объединяет планирование, консолидацию, сценарный анализ и контроль KPI,
+              чтобы руководство принимало решения быстрее и точнее.
+            </p>
+
+            <div class="metric">
+              <div class="metric-item">
+                <div class="metric-value">1 версия</div>
+                <div class="metric-label">единого источника данных для управленческих решений</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">меньше ручного труда</div>
+                <div class="metric-label">за счёт автоматизации расчётов и согласований</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">быстрее закрытие</div>
+                <div class="metric-label">отчётных периодов и формирование прогнозов</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">выше прозрачность</div>
+                <div class="metric-label">по KPI, бюджетам, отклонениям и драйверам бизнеса</div>
+              </div>
             </div>
-            <div class="metric-item">
-              <div class="metric-value">меньше ручного труда</div>
-              <div class="metric-label">за счёт автоматизации расчётов и согласований</div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-value">быстрее закрытие</div>
-              <div class="metric-label">отчётных периодов и формирование прогнозов</div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-value">выше прозрачность</div>
-              <div class="metric-label">по KPI, бюджетам, отклонениям и драйверам бизнеса</div>
+          </div>
+
+          <div class="hero-intro reveal">
+            <p>
+              Когда бюджетирование, прогнозирование и управленческая отчётность начинают
+              упираться в ручной труд, разрозненные файлы и ошибки в формулах — бизнесу нужен
+              новый уровень зрелости. CPM помогает перевести управление эффективностью из Excel в
+              единую управляемую систему.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#about">Изучить CPM</a>
+              <a class="btn btn-secondary" href="#decision-makers">Что важно при выборе</a>
             </div>
           </div>
         </div>
