@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Как повысить эффективность: CPM, когда Эксель не вывозит</title>
-  <meta name="description" content="CPM — Corporate Performance Management: как повысить эффективность бизнеса, чем CPM отличается от ERP и что важно ЛПР при выборе платформы автоматизации." />
+  <meta name="description" content="CPM — Corporate Performance Management: как повысить эффективность бизнеса, чем CPM отличается от ERP и что важно при выборе платформы автоматизации." />
   <style>
     :root {
       --bg: #0b1020;
@@ -18,6 +18,9 @@
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
       --radius: 22px;
       --maxw: 1180px;
+      --logo-dark: #171544;
+      --logo-pink: #df1983;
+      --logo-purple: #5931c4;
     }
 
     * {
@@ -65,27 +68,29 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      min-height: 72px;
+      min-height: 78px;
     }
 
-    .logo {
+    .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.2px;
+      gap: 14px;
     }
 
-    .logo-badge {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: grid;
-      place-items: center;
-      color: #07111f;
-      font-weight: 900;
-      box-shadow: 0 10px 30px rgba(61, 217, 197, 0.25);
+    .brand-logo {
+      display: block;
+      width: 180px;
+      height: auto;
+    }
+
+    .brand-logo.small {
+      width: 170px;
+    }
+
+    .brand-logo svg {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .nav {
@@ -120,17 +125,19 @@
       align-items: center;
     }
 
-    .eyebrow {
+    .hero-brand {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid rgba(61, 217, 197, 0.25);
-      background: rgba(61, 217, 197, 0.08);
-      color: #c8fff7;
-      border-radius: 999px;
-      font-size: 0.92rem;
+      padding: 12px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
       margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-brand .brand-logo {
+      width: 210px;
     }
 
     h1 {
@@ -223,7 +230,7 @@
     }
 
     .metric-value {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 800;
       margin-bottom: 4px;
       color: #dffff9;
@@ -356,14 +363,12 @@
       color: #ffffff;
     }
 
-    /* Footer */
     .footer {
       padding: 36px 0 48px;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    /* Animation */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -385,7 +390,6 @@
       50% { transform: translateY(-10px); }
     }
 
-    /* Responsive */
     @media (max-width: 980px) {
       .hero-grid,
       .grid-3,
@@ -437,20 +441,38 @@
       .highlight {
         padding: 18px;
       }
+
+      .brand-logo.small {
+        width: 150px;
+      }
+
+      .hero-brand .brand-logo {
+        width: 180px;
+      }
     }
   </style>
 </head>
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a href="#top" class="logo">
-        <span class="logo-badge">CP</span>
-        <span>CPM Insights</span>
+      <a href="#top" class="brand" aria-label="Optimacros">
+        <span class="brand-logo small">
+          <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <g transform="translate(0,8)">
+              <polygon points="42,18 61,10 81,17 60,26" fill="var(--logo-pink)"/>
+              <polygon points="110,8 131,13 131,78 110,72" fill="var(--logo-purple)"/>
+              <polygon points="38,32 58,36 58,82 102,96 102,116 38,96" fill="var(--logo-dark)"/>
+            </g>
+            <text x="150" y="88" font-size="54" font-weight="800" fill="var(--logo-dark)"
+              font-family="Inter, Arial, sans-serif">Optimacros</text>
+          </svg>
+        </span>
       </a>
+
       <nav class="nav">
         <a href="#about">Про CPM</a>
         <a href="#vs-erp">CPM vs ERP</a>
-        <a href="#decision-makers">ЛПР</a>
+        <a href="#decision-makers">Выбор платформы</a>
         <a href="#summary">Итог</a>
       </nav>
     </div>
@@ -460,17 +482,32 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="reveal visible">
-          <div class="eyebrow">Corporate Performance Management</div>
+          <div class="hero-brand">
+            <span class="brand-logo">
+              <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Optimacros">
+                <g transform="translate(0,8)">
+                  <polygon points="42,18 61,10 81,17 60,26" fill="var(--logo-pink)"/>
+                  <polygon points="110,8 131,13 131,78 110,72" fill="var(--logo-purple)"/>
+                  <polygon points="38,32 58,36 58,82 102,96 102,116 38,96" fill="var(--logo-dark)"/>
+                </g>
+                <text x="150" y="88" font-size="54" font-weight="800" fill="#ffffff"
+                  font-family="Inter, Arial, sans-serif">Optimacros</text>
+              </svg>
+            </span>
+          </div>
+
           <h1>Как повысить эффективность: CPM, когда Эксель не вывозит?</h1>
+
           <p>
             Когда бюджетирование, прогнозирование и управленческая отчётность начинают
             упираться в ручной труд, разрозненные файлы и ошибки в формулах — бизнесу нужен
             новый уровень зрелости. CPM помогает перевести управление эффективностью из Excel в
             единую управляемую систему.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#about">Изучить CPM</a>
-            <a class="btn btn-secondary" href="#decision-makers">Что важно ЛПР</a>
+            <a class="btn btn-secondary" href="#decision-makers">Что важно при выборе</a>
           </div>
         </div>
 
@@ -613,7 +650,7 @@
     <section class="section" id="decision-makers">
       <div class="container">
         <div class="reveal">
-          <h2 class="section-title">3. ЛПР со стороны клиента: что важно при выборе платформы автоматизации</h2>
+          <h2 class="section-title">3. Что важно при выборе платформы автоматизации</h2>
           <p class="section-subtitle">
             Решение о внедрении CPM-платформы обычно принимается не одним человеком. У разных
             участников процесса — разные критерии оценки: от окупаемости проекта до надёжности
@@ -696,7 +733,7 @@
 
   <footer class="footer">
     <div class="container">
-      © 2026 CPM Insights — одностраничный сайт для GitHub Pages
+      © 2026 Optimacros — одностраничный сайт для GitHub Pages
     </div>
   </footer>
 
