@@ -2,96 +2,174 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Как повысить эффективность: CPM, когда Эксель не вывозит?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Animate.css library for animations -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link rel="stylesheet" href="style.css">
+  <title>Как повысить эффективность: CPM, когда Эксель не вывозит?</title>
+  <style>
+    :root {
+      --primary: #185ADB;
+      --accent: #FFB800;
+      --bg-light: #F5F6FA;
+      --text-dark: #222E3A;
+      --border: #E3E9F3;
+      --grey: #B3C4D9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 30px 0 20px 0;
+      box-shadow: 0 2px 8px 0 #185adb25;
+    }
+    header h1 {
+      margin: 0 0 18px 0;
+      font-size: 2.2em;
+      font-weight: 600;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 0;
+      margin: 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+    nav a:hover {
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    main {
+      margin: 40px 0;
+    }
+    section {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px 0 #222E3A12;
+      padding: 32px 24px;
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+    section.visible {
+      opacity: 1;
+      transform: none;
+    }
+    section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.5em;
+      margin-bottom: 0.6em;
+    }
+    footer {
+      background: var(--border);
+      text-align: center;
+      padding: 16px 0;
+      color: #888;
+      font-size: 0.9em;
+      margin-top: 50px;
+    }
+    /* Мобильная адаптация */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+      main {
+        margin: 16px 0;
+      }
+      section {
+        padding: 18px 8px;
+      }
+      header h1 {
+        font-size: 1.1em;
+        padding: 0 2px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="logo-container">
-      <img src="images/logo_optimacros.svg" alt="Optimacros">
+    <div class="container">
+      <h1>Как повысить эффективность: CPM, когда Эксель не вывозит?</h1>
+      <nav>
+        <ul>
+          <li><a href="#pro-cpm">Про CPM</a></li>
+          <li><a href="#cpm-vs-erp">Чем отличается от ERP</a></li>
+          <li><a href="#lpr">Что важно ЛПР</a></li>
+        </ul>
+      </nav>
     </div>
-    <h1>Как повысить эффективность:<br> CPM, когда Эксель не вывозит?</h1>
   </header>
 
-  <main>
-    <!-- Раздел 1: Про CPM -->
-    <section id="about-cpm" class="animate__animated animate__fadeIn">
-      <h2>Что такое CPM?</h2>
+  <main class="container">
+    <section id="pro-cpm">
+      <h2>Про CPM</h2>
+      <p>CPM (Corporate Performance Management, корпоративное управление эффективностью) — это набор процессов и технологий, который помогает компаниям планировать, анализировать и управлять своей деятельностью на стратегическом и операционном уровне. CPM выходит за рамки простых таблиц — это динамика, прозрачность, быстрые пересчеты, совместная работа, моделирование сценариев (и забыли про "я забыл сохранить файл в Excel").</p>
+    </section>
+
+    <section id="cpm-vs-erp">
+      <h2>Чем отличается от ERP</h2>
+      <p>ERP — это учет. CPM — это управление эффективностью. Если ERP фиксирует "что есть" (остатки, проводки, бюджет-факт), то CPM отвечает на вопрос "а что будет, что если". CPM-платформы дают инструмент для гибкого моделирования, работы с любыми данными, построения сценариев и планов, которые не сводятся к цифрам в одном-двух разделах. Это подходит и финансистам, и производственным директорам, и HR.</p>
+    </section>
+
+    <section id="lpr">
+      <h2>Категории лиц, принимающих решения (ЛПР). Что важно при выборе платформы автоматизации?</h2>
       <p>
-        <strong>CPM (Corporate Performance Management)</strong> — это “надстройка” над учётными системами предприятия, позволяющая автоматизировать процессы планирования, бюджетирования, консолидации, моделирования и анализа данных. В отличие от Excel, CPM-системы легко справляются с быстро растущими объёмами данных, большим количеством пользователей и “нестандартным” управленческим учётом.
+        <ul>
+          <li><b>Финансовый директор (CFO):</b> требуется скорость пересчетов, прозрачность процессов, контроль изменений.</li>
+          <li><b>ИТ-директор:</b> важна интеграция, безопасность, масштабируемость (никакого кодинга — всё на визуальном уровне, никаких зависимостей от "эксель-гуру").</li>
+          <li><b>Руководители подразделений:</b> простой интерфейс, возможность собрать свою логику, гибкость инструментов.</li>
+        </ul>
+        <br />
+        Всем ЛПР важно: гибкость, скорость внедрения, простота обслуживания и понятная поддержка. И только потом цена.
       </p>
-      <div class="animation-example">
-        <span class="excel">Excel</span>
-        <span class="arrow">→</span>
-        <span class="optimacros animate__animated animate__pulse animate__infinite">Optimacros CPM</span>
-      </div>
-    </section>
-
-    <!-- Раздел 2: Отличие CPM от ERP -->
-    <section id="vs-erp" class="animate__animated animate__fadeInUp">
-      <h2>Чем CPM отличается от ERP?</h2>
-      <div class="columns">
-        <div class="column">
-          <h3>ERP</h3>
-          <ul>
-            <li>Операционный учёт: финансы, закупки, склад</li>
-            <li>Фиксация “факта”</li>
-            <li>Технология корпоративных данных</li>
-          </ul>
-        </div>
-        <div class="column">
-          <h3>CPM</h3>
-          <ul>
-            <li>Планирование и моделирование — “что если?”</li>
-            <li>Бюджетирование, консолидация, прогнозирование</li>
-            <li>Гибкие методологии и специфика бизнеса</li>
-            <li>Простое масштабирование под задачи</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Раздел 3: ЛПР и их мотивация -->
-    <section id="decision-makers" class="animate__animated animate__fadeInUp">
-      <h2>Что важно для ключевых ЛПР?</h2>
-      <div class="person-cards">
-        <div class="card">
-          <div class="icon">💼</div>
-          <h4>Финансовый директор</h4>
-          <ul>
-            <li>Гибкость построения процессов</li>
-            <li>Скорость пересчётов и моделирования</li>
-            <li>Прозрачность данных</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="icon">🛡️</div>
-          <h4>ИТ-директор</h4>
-          <ul>
-            <li>Интеграция с ERP и BI</li>
-            <li>Безопасность</li>
-            <li>Поддержка и развитие платформы</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="icon">📈</div>
-          <h4>Генеральный директор</h4>
-          <ul>
-            <li>Достоверные прогнозы</li>
-            <li>Ускорение принятия решений</li>
-            <li>Быстрый возврат инвестиций</li>
-          </ul>
-        </div>
-      </div>
     </section>
   </main>
 
   <footer>
-    <p>© Optimacros, 2024</p>
-    <a href="https://optimacros.com/" target="_blank">optimacros.com</a>
+    <div class="container">
+      © 2024 | Ваш сайт про CPM & IBP
+    </div>
   </footer>
+
+  <script>
+    // Анимация появления секций при прокрутке
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('DOMContentLoaded', revealSections);
+
+    function revealSections() {
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          section.classList.add('visible');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
